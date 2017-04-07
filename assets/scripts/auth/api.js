@@ -10,7 +10,17 @@ const signUp = (data) => {
     data
   })
 }
-// an object that we are passing to the ajax method
+
+const signIn = (data) => {
+  console.log(data)
+  return $.ajax({
+    url: config.apiOrigin + '/sign-in',
+    method: 'POST',
+    data
+  })
+}
+
 module.exports = {
-  signUp
+  signUp,
+  signIn
 }
