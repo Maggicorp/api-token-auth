@@ -2,6 +2,7 @@
 
 const signUpSuccess = (data) => {
   console.log(data)
+  console.log('You did it!')
 }
 
 const signUpFailure = (error) => {
