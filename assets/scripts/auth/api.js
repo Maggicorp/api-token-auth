@@ -2,6 +2,8 @@
 
 const config = require('../config.js')
 
+const store = require('../store.js')
+
 const signUp = (data) => {
   console.log(data)
   return $.ajax({
@@ -20,7 +22,19 @@ const signIn = (data) => {
   })
 }
 
+const changePassword = (data) => {
+  console.log('running change password function')
+  return $.ajax({
+    url: config.apiOrigin + '/change-password/' + store.user.id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token},
+    data
+  })
+}
+
 module.exports = {
   signUp,
-  signIn
+  signIn,
+  changePassword
 }
